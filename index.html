@@ -21,7 +21,9 @@
     .title { font-size: 2em; font-weight: 800; margin-top: 70px; padding-bottom: 12px; }
     .description { color: rgba(0, 0, 0, 0.555); }
     .form { background-color: hsl(0, 0%, 100%); padding: 55px 0; z-index: 5; width: 500px; margin: 0 auto; }
-    .flexbox div { display: inline-block; padding: 0 55px; }
+    .flexbox { display: flex; justify-content: space-between; align-items: center; margin: 0 50px; font-size: 1.2em; color: rgba(0, 0, 0, 0.678); }
+    .weight { font-weight: bold; font-size: 1.7em; }
+    .month { color: rgba(0, 0, 0, 0.678); }
     input[type="range"] { -webkit-appearance: none; width: 400px; height: 5px; background-color: rgba(0, 0, 0, 0.055); outline: 0; border-radius: 25px; margin: 25px 0; }
     input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; transition: .4s; cursor: pointer; background-image: url(images/icon-slider.svg); background-color: hsl(174, 86%, 45%); width: 25px; height: 25px; background-repeat: no-repeat; background-position: center; border-radius: 25px; box-shadow: 0 7px 5px hsl(174, 77%, 80%); }
     input[type="range"]::-webkit-slider-thumb:hover { background-color: cyan; }
@@ -31,7 +33,7 @@
     input[type="checkbox"] { opacity: 0; width: 0; height: 0; }
     .checkbox { position: absolute; top: 0; bottom: 0; left: 0; right: 0; cursor: pointer; width: 40px; background-color: #ccc; transition: .4s; cursor: pointer; }
     .checkbox::before { position: absolute; content: ""; left: 4px; bottom: 2px; width: 12px; height: 12px; background-color: white; transition: .4s; }
-    input[type="checkbox"]:checked + .checkbox { background-color: #2196F3; }
+    input[type="checkbox"]:checked + .checkbox { background-color: #06e1e9; }
     input[type="checkbox"]:checked + .checkbox::before { transform: translateX(20px); }
     .checkbox:hover { background-color: hsl(174, 77%, 80%); }
     .checkbox.round { border-radius: 34px; }
@@ -49,6 +51,7 @@
       .title { font-size: 1.2em; }
       .description span { display: block; }
       .form { width: 280px; }
+      .flexbox { display: block; margin: 0 auto; }
       input[type="range"]{ width: 230px; height: 9px; }
       .check { font-size: .7em; margin-left: 35px; margin-top: 25px; }
       .buy { display: block; }
@@ -73,13 +76,13 @@
     <div class="form">
       <div class="flexbox">
         <div><span id="view"></span> Pageviews</div>
-        <div><span id="price-desktop"><span><b>$<span class="price"></span></b></span><span class="month">/Month</span></span></div>
+        <div><span id="price-desktop"><span><span class="weight">$<span class="price"></span></span></span><span class="month"><sup> /month</sup></span></span></div>
       </div>
       <div>
         <input id="range" type="range" min="0" max="4" step="1">
       </div>
-      <div><span id="price-mobile"><b>$<span class="price"></span></b><span class="month">/Month</span></span></div>
-      <div class="check">Monthly <label class="checkbox-container"><input id="discountCheckbox" type="checkbox" onclick="cDiscount();"><span class="round checkbox" id="checkbox"></span></label> Yearly Billing <span class="discount" id="discount">25% discount</span></div>
+      <div><span id="price-mobile"><span class="weight">$<span class="price"></span></span><span class="month"><sup> /month</sup></span></span></div>
+      <div class="check">Monthly Billing <label class="checkbox-container"><input id="discountCheckbox" type="checkbox" onclick="cDiscount();"><span class="round checkbox" id="checkbox"></span></label> Yearly Billing <span class="discount" id="discount">25% discount</span></div>
       <hr>
       <div class="buy">
         <div class="benefit">
@@ -147,7 +150,7 @@
     this.style.background = 'linear-gradient(to right, hsl(174, 77%, 80%) 0%, hsl(174, 77%, 80%) ' + thumbRange + '%, rgba(0, 0, 0, 0.055) ' + thumbRange + '%, rgba(0, 0, 0, 0.055) 100%)'
     // Set price for all class name = price
     for (var i = 0; i < price.length; i++) {
-      price[i].innerHTML = eval(priceList[this.value] * discount);
+      price[i].innerHTML = eval(priceList[this.value] * discount) + ".00";
     }
     view.innerHTML = viewList[this.value];
   };
