@@ -13,18 +13,18 @@
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     body { margin: 0; padding: 0; box-sizing: border-box; font-size: 15px; font-family: 'Manrope'; background-color: hsl(230, 100%, 99%); background-image: url(images/bg-pattern.svg); background-repeat: no-repeat; background-size: cover; background-size: 100% 350px; }
-    .attribution { font-size: 11px; text-align: center; }
+    .attribution { margin-top: 50px; font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
     .container { text-align: center; }
     .introduction { padding-bottom: 55px; position: relative; max-width: 100%; }
     .intro-circle { z-index: -1; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); }
     .title { font-size: 2em; font-weight: 800; margin-top: 70px; padding-bottom: 12px; }
     .description { color: rgba(0, 0, 0, 0.555); }
-    .form { background-color: hsl(0, 0%, 100%); padding: 55px 0; z-index: 5; width: 500px; margin: 0 auto; }
-    .flexbox { display: flex; justify-content: space-between; align-items: center; margin: 0 50px; font-size: 1.2em; color: rgba(0, 0, 0, 0.678); }
-    .weight { font-weight: bold; font-size: 1.7em; }
-    .month { color: rgba(0, 0, 0, 0.678); }
-    input[type="range"] { -webkit-appearance: none; width: 400px; height: 5px; background-color: rgba(0, 0, 0, 0.055); outline: 0; border-radius: 25px; margin: 25px 0; }
+    .form { background-color: hsl(0, 0%, 100%); padding: 55px 0; z-index: 5; max-width: 500px; margin: 0 auto; box-shadow: 0 8px 9px 5px rgba(0, 0, 0, 0.048); }
+    .flexbox { display: flex; font-weight: bold; justify-content: space-between; align-items: center; margin: 0 60px; font-size: 1.2em; color: rgba(0, 0, 0, 0.438); }
+    .weight { font-weight: bold; font-size: 1.7em; color: black; }
+    .month { color: rgba(0, 0, 0, 0.678); font-weight: normal; }
+    input[type="range"] { -webkit-appearance: none; width: 375px; height: 5px; background-color: rgba(0, 0, 0, 0.055); outline: 0; border-radius: 25px; margin: 25px 0; }
     input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; transition: .4s; cursor: pointer; background-image: url(images/icon-slider.svg); background-color: hsl(174, 86%, 45%); width: 25px; height: 25px; background-repeat: no-repeat; background-position: center; border-radius: 25px; box-shadow: 0 7px 5px hsl(174, 77%, 80%); }
     input[type="range"]::-webkit-slider-thumb:hover { background-color: cyan; }
     input[type="range"]::-webkit-slider-thumb:active { cursor: grabbing; }
@@ -50,7 +50,7 @@
     @media screen and (max-width: 375px) {
       .title { font-size: 1.2em; }
       .description span { display: block; }
-      .form { width: 280px; }
+      .form { max-width: 280px; }
       .flexbox { display: block; margin: 0 auto; }
       input[type="range"]{ width: 230px; height: 9px; }
       .check { font-size: .7em; margin-left: 35px; margin-top: 25px; }
@@ -64,7 +64,7 @@
   <div class="container">
     <div class="introduction">
       <div class="intro-circle">
-        <img src="images/pattern-circles.svg" alt="pattern circles">
+        <img src="images/pattern-circles.svg" alt="Pattern Circles">
       </div>
       <div class="title">
         Simple, traffic-based pricing
@@ -75,7 +75,7 @@
     </div>
     <div class="form">
       <div class="flexbox">
-        <div><span id="view"></span> Pageviews</div>
+        <div><span id="view"></span> PAGEVIEWS</div>
         <div><span id="price-desktop"><span><span class="weight">$<span class="price"></span></span></span><span class="month"><sup> /month</sup></span></span></div>
       </div>
       <div>
@@ -86,9 +86,9 @@
       <hr>
       <div class="buy">
         <div class="benefit">
-          <div><span><img src="images/icon-check.svg" alt=""></span> Ulimited websites</div>
-          <div><span><img src="images/icon-check.svg" alt=""></span> 100% data ownership</div>
-          <div><span><img src="images/icon-check.svg" alt=""></span> Email reports</div>
+          <div><span><img src="images/icon-check.svg" alt="Check Icon"></span> Ulimited websites</div>
+          <div><span><img src="images/icon-check.svg" alt="Check Icon"></span> 100% data ownership</div>
+          <div><span><img src="images/icon-check.svg" alt="Check Icon"></span> Email reports</div>
         </div>
         <div class="buybtn"><button class="btn">Start my trial</button></div>
       </div>
@@ -96,7 +96,7 @@
   </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Toyger</a>.
+    Coded by <a href="https://www.facebook.com/Hac.Toyger/">Toyger</a>.
   </div>
 </body>
 <!-- Script -->
